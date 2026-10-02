@@ -1,107 +1,83 @@
-# miniC++
+# miniC++ Studio
 
-A small C++ → C translator written in Python.
-Translate simple C++ code to C and optionally run it.
+A lightweight C++ IDE and C translator built with Python and Tkinter.
+Write, run, edit, and view generated C code in one simple interface.
 
-## What it looks like
+## Features
 
-```text
-C++ file
-   │
-   ▼
- miniC++
-   │
-   ▼
-Generated C
-   │
-   ▼
-C Compiler
-   │
-   ▼
- Program
-```
+* C++ code editor
+* Run with **F5**
+* Standard input and output
+* Open / Save `.cpp` files
+* View generated C code
+* Automatic C compiler detection
 
-## Requirements
+## Install
 
-* Python 3
-* C compiler
-
-## Linux
-
-### Debian / Ubuntu
+### Linux — Debian / Ubuntu
 
 ```bash
 git clone https://github.com/holyyyyyyyyyyyyyyyyyyyyyyyyy/minic-usingpython-.git
 cd minic-usingpython-
 
 sudo apt update
-sudo apt install python3 build-essential
+sudo apt install python3 python3-tk build-essential
 ```
 
 Run:
 
 ```bash
-python3 minicpp_full.py example.cpp --run
+python3 minicpp_full.py
 ```
 
-Other Linux distros only need **Python 3 + a C compiler**.
-
-### Arch
+### Arch Linux
 
 ```bash
-sudo pacman -S python gcc
+sudo pacman -S python tk gcc
 ```
 
 ### Fedora
 
 ```bash
-sudo dnf install python3 gcc
+sudo dnf install python3 python3-tk gcc
 ```
 
-## Windows — CMD
+### Windows — CMD
 
 Install **Python 3** and a C compiler such as **MinGW**.
 
 ```cmd
 git clone https://github.com/holyyyyyyyyyyyyyyyyyyyyyyyyy/minic-usingpython-.git
 cd minic-usingpython-
+python minicpp_full.py
 ```
 
-Run:
-
-```cmd
-python minicpp_full.py example.cpp --run
-```
-
-## Windows — PowerShell
+### Windows — PowerShell
 
 ```powershell
 git clone https://github.com/holyyyyyyyyyyyyyyyyyyyyyyyyy/minic-usingpython-.git
 cd minic-usingpython-
+python .\minicpp_full.py
 ```
 
-Run:
+## Requirements
 
-```powershell
-python .\minicpp_full.py example.cpp --run
-```
+* Python 3
+* Tkinter
+* C compiler: `cc`, `gcc`, `clang`, or `tcc`
 
-## Generate C
-
-Linux:
-
-```bash
-python3 minicpp_full.py example.cpp -o output.c
-```
-
-Windows:
-
-```cmd
-python minicpp_full.py example.cpp -o output.c
-```
-
-## Usage
+## How It Works
 
 ```text
-python minicpp_full.py FILE.cpp [-o OUT.c] [--run] [--cc COMPILER]
+C++ Code
+   ↓
+miniC++ Studio
+   ↓
+Generated C
+   ↓
+C Compiler
+   ↓
+Program
 ```
+
+The IDE compiles the generated C code and runs the resulting program automatically.
