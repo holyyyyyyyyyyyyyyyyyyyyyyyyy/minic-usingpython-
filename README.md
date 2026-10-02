@@ -1,52 +1,107 @@
 # miniC++
 
 A small C++ → C translator written in Python.
-Supports a basic subset of C++ and can compile/run the generated C code.
+Translate simple C++ code to C and optionally run it.
 
 ## What it looks like
 
 ```text
-miniC++.py
-    │
-    ▼
- example.cpp
-    │
-    ▼
- generated C
-    │
-    ▼
- C compiler
-    │
-    ▼
- program
+C++ file
+   │
+   ▼
+ miniC++
+   │
+   ▼
+Generated C
+   │
+   ▼
+C Compiler
+   │
+   ▼
+ Program
 ```
 
-## How to Run
+## Requirements
 
-### Linux
+* Python 3
+* C compiler
+
+## Linux
+
+### Debian / Ubuntu
+
+```bash
+git clone https://github.com/holyyyyyyyyyyyyyyyyyyyyyyyyy/minic-usingpython-.git
+cd minic-usingpython-
+
+sudo apt update
+sudo apt install python3 build-essential
+```
+
+Run:
 
 ```bash
 python3 minicpp_full.py example.cpp --run
 ```
 
-Debian/Ubuntu:
+Other Linux distros only need **Python 3 + a C compiler**.
+
+### Arch
 
 ```bash
-sudo apt install python3 build-essential
+sudo pacman -S python gcc
 ```
 
-Other distros: install Python 3 + a C compiler.
+### Fedora
 
-### Windows
+```bash
+sudo dnf install python3 gcc
+```
 
-Install Python and a C compiler (e.g. MinGW), then:
+## Windows — CMD
 
-```powershell
+Install **Python 3** and a C compiler such as **MinGW**.
+
+```cmd
+git clone https://github.com/holyyyyyyyyyyyyyyyyyyyyyyyyy/minic-usingpython-.git
+cd minic-usingpython-
+```
+
+Run:
+
+```cmd
 python minicpp_full.py example.cpp --run
 ```
 
-### Generate C only
+## Windows — PowerShell
+
+```powershell
+git clone https://github.com/holyyyyyyyyyyyyyyyyyyyyyyyyy/minic-usingpython-.git
+cd minic-usingpython-
+```
+
+Run:
+
+```powershell
+python .\minicpp_full.py example.cpp --run
+```
+
+## Generate C
+
+Linux:
 
 ```bash
 python3 minicpp_full.py example.cpp -o output.c
+```
+
+Windows:
+
+```cmd
+python minicpp_full.py example.cpp -o output.c
+```
+
+## Usage
+
+```text
+python minicpp_full.py FILE.cpp [-o OUT.c] [--run] [--cc COMPILER]
 ```
